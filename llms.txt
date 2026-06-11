@@ -1,0 +1,7 @@
+# 맛플 (Matple)
+
+> 광고·협찬 안 받은 first-party 솔직 후기로 데이트·특별한 날 실패 없는 한 끼. 광고·협찬을 받지 않는(NoSponsorPledge) first-party 솔직 후기와 큐레이터 안목으로 음식점을 큐레이션합니다. '객관적 맛 점수'를 주장하지 않고, 무엇을 보고 무엇을 무시했는지(SignalDisclosure)를 공개합니다. 외부 플랫폼 평점·리뷰는 저장·재게시하지 않습니다(first-party 만).
+
+## Pages
+- [맛플 정체성·FAQ](/index.html): 무광고 first-party·신호공개·방문 증명 요약 + FAQPage.
+- [방법론](/methodology.html): 운영 서약·측면별 별점·상황 적합도·방문 증명·반증조건 공개.

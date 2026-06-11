@@ -1,0 +1,5 @@
+# AI usage policy
+content: first-party honest reviews (no ads, no sponsorship) + curator notes
+no-external-platform-data: google/naver/kakao ratings & reviews are never stored or republished
+objective-score: not claimed — signal disclosure instead (what we look at / ignore)
+attribution: appreciated
