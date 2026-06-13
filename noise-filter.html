@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네이버 블로그 협찬 리뷰·평점 조작을 걸러내는 방법 — 맛플</title>
+<meta name="description" content="공정위 표준문구(제공받아·소정의 원고료·체험단) 자동 탐지, 평점 이상치 검출, 망고플레이트 7년 서비스 부검으로 배운 교훈. 맛플(Matple)의 노이즈 필터 방법론을 공개합니다.">
+<meta property="og:title" content="네이버 블로그 협찬 리뷰·평점 조작을 걸러내는 방법 — 맛플">
+<meta property="og:description" content="공정위 표준문구 자동 탐지 + 평점 이상치 + 망고플레이트 부검. 맛플의 노이즈 필터 방법론.">
+<meta property="og:type" content="article">
+<style>
+body{font:16px/1.75 -apple-system,Pretendard,'Apple SD Gothic Neo',sans-serif;max-width:760px;margin:0 auto;padding:28px;color:#1a1a1a}
+a{color:#c0392b}
+h1{font-size:26px;line-height:1.3}
+h2{font-size:20px;margin-top:36px;border-bottom:1px solid #eee;padding-bottom:6px}
+h3{font-size:16px;margin-top:22px}
+.note{background:#faf6f4;border-left:3px solid #c0392b;padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0}
+.stat{font-size:22px;font-weight:700;color:#c0392b}
+.phrase{display:inline-block;background:#f4ece9;color:#a33;border-radius:6px;padding:2px 10px;font-size:14px;margin:3px 4px 3px 0;font-family:monospace}
+.meta{font-size:13px;color:#777}
+.foot{font-size:13px;color:#777;border-top:1px solid #ddd;margin-top:36px;padding-top:14px}
+table{border-collapse:collapse;width:100%;margin:14px 0}
+th,td{border:1px solid #ddd;padding:8px 12px;text-align:left}
+th{background:#f9f4f2;font-weight:600}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "네이버 블로그 협찬 리뷰·평점 조작을 걸러내는 방법",
+  "datePublished": "2026-06-13",
+  "dateModified": "2026-06-13",
+  "inLanguage": "ko",
+  "author": {"@type": "Organization", "name": "맛플 (Matple)"},
+  "about": "협찬 리뷰 탐지·평점 노이즈 필터·망고플레이트 서비스 종료 분석",
+  "publisher": {"@type": "Organization", "name": "맛플", "url": "https://hexisteme.github.io/matple/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "네이버 블로그 협찬 리뷰를 자동으로 탐지하는 방법이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공정거래위원회 '추천·보증 등에 관한 표시·광고 심사지침'에 따르면, 경제적 대가를 받은 블로그 글에는 '제공받아 작성한 글입니다', '소정의 원고료를 받았습니다', '체험단으로 선정되어', '협찬을 받아' 같은 표준 고지 문구가 포함되어야 합니다. 이 문구들을 텍스트에서 탐지하는 것이 가장 신뢰도 높은 협찬 감지 방법입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "평점 조작을 어떻게 알아볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "단기간 리뷰 급증(오픈 이벤트 후 1개월 내 평점 급등), 리뷰 표본 부족(리뷰 10개 미만 5.0점 등), 플랫폼 간 평점 격차(구글 4.7 vs 카카오맵 3.8 등)가 평점 조작·왜곡의 주요 신호입니다. 단일 종합 점수만 보면 이 신호를 볼 수 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "망고플레이트는 왜 서비스를 종료했나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "망고플레이트는 2016년 서비스를 시작해 7년간 운영하다 2023년 10월 여기어때에 인수된 후 서비스를 종료했습니다. 광고·협찬 없이 신뢰를 지키려 했지만, 그 신뢰를 수익으로 전환하는 모델을 찾지 못한 것이 핵심 원인입니다. 맛플은 이 실패에서 '수익 경로를 출시 시점에 신뢰 신호와 결박한다'는 교훈을 얻었습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "믿을 만한 음식점을 찾는 도구가 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "맛플(Matple)은 광고·협찬 대가를 받지 않은 first-party 솔직 후기와, 공정위 협찬 표준문구 탐지·평점 이상치 검출을 결합한 노이즈 필터를 제공합니다. 단일 점수 대신 '무엇을 보고 무엇을 무시했는지(SignalDisclosure)'를 공개합니다. https://hexisteme.github.io/matple/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<h1>네이버 블로그 협찬 리뷰·평점 조작을 걸러내는 방법</h1>
+<p><a href="./">← 맛플</a> · <span class="meta">2026-06-13 · 맛플 노이즈 필터 방법론 공개</span></p>
+
+<div class="note">
+  <strong>한 줄 요약</strong>: 공정위 표준문구 자동 탐지 + 평점 이상치 + 플랫폼 간 격차 비교 — 이 세 신호를 결합하면 협찬·조작 가능성을 "의심" 수준으로 탐지할 수 있습니다. 맛플은 이 방법론을 <b>NoiseVerdict</b>(저노이즈/협찬주의/조작의심/신호부족) 4등급으로 판정해 공개합니다.
+</div>
+
+<h2>1. 협찬 리뷰를 가려내는 방법: 공정위 표준문구</h2>
+
+<p>공정거래위원회 <em>추천·보증 등에 관한 표시·광고 심사지침</em>(2023년 개정)에 따르면, 블로거가 경제적 대가(원고료·제품 제공·초대 등)를 받고 작성한 글에는 이를 명시해야 합니다. 탐지해야 할 핵심 표준문구는 다음과 같습니다:</p>
+
+<p>
+  <span class="phrase">제공받아 작성</span>
+  <span class="phrase">소정의 원고료</span>
+  <span class="phrase">체험단</span>
+  <span class="phrase">협찬을 받아</span>
+  <span class="phrase">무상으로 제공</span>
+  <span class="phrase">초청을 받아</span>
+  <span class="phrase">광고성 글임을 밝힙니다</span>
+  <span class="phrase">유료광고포함</span>
+  <span class="phrase">이 포스팅은 쿠팡 파트너스</span>
+</p>
+
+<p>이 문구가 없는데 글의 톤이 지나치게 긍정적이고 구체적 단점이 없다면 <b>협찬 의심</b> 신호입니다. 맛플의 <code>SponsorshipDetector</code>는 네이버 블로그 검색 API 스니펫을 대상으로 위 패턴을 자동 탐지합니다 — 단, 탐지 결과는 "의심"이며 단정 아닙니다.</p>
+
+<h3>합법 범위 주의</h3>
+<p>네이버·카카오 자체 리뷰(별점 탭) 원본은 <b>크롤링 시 DB권 침해 리스크</b>가 있습니다(대법원 2017다224395 — 사람인 vs 잡코리아 판례 적용). 맛플은 공개 API 스니펫과 런타임 읽기(저장 안 함)만 사용합니다.</p>
+
+<h2>2. 평점 조작·왜곡의 4가지 신호</h2>
+
+<table>
+  <tr><th>신호</th><th>설명</th><th>판정</th></tr>
+  <tr><td>리뷰 표본 부족</td><td>리뷰 15개 미만의 평균은 통계적으로 불안정 (표준오차 ↑)</td><td>신호부족</td></tr>
+  <tr><td>단기 급등</td><td>오픈·이벤트 후 1개월 이내 리뷰 급증 + 평점 4.8+ 형성</td><td>조작의심</td></tr>
+  <tr><td>플랫폼 간 격차</td><td>구글 4.7 vs 카카오맵 3.4 등 1.0 이상 괴리</td><td>협찬주의</td></tr>
+  <tr><td>최신 리뷰 독소</td><td>최근 3개월 부정 리뷰 비율 급증 (구성 변화)</td><td>협찬주의</td></tr>
+</table>
+
+<div class="note">
+  맛플은 단일 종합 점수(합성 "진짜 점수")를 만들지 않습니다 — 신호 빈약을 숨기기 때문입니다. 대신 <b>NoiseVerdict 4등급</b>(저노이즈/협찬주의/조작의심/신호부족)으로 분류하고, 어떤 신호로 판정했는지를 공개합니다(<b>SignalDisclosure</b>).
+</div>
+
+<h2>3. 망고플레이트 7년 서비스 부검 — 우리가 배운 것</h2>
+
+<p>맛플이 노이즈 필터 방향으로 설계된 배경에는 망고플레이트의 실패 분석이 있습니다.</p>
+
+<table>
+  <tr><th>항목</th><th>내용</th></tr>
+  <tr><td>서비스 기간</td><td>2016년 출시 → 2023년 10월 종료 (약 7년)</td></tr>
+  <tr><td>종료 경위</td><td>여기어때에 인수 후 서비스 종료. 카카오·옐로모바일 인수설은 사실 아님.</td></tr>
+  <tr><td>핵심 실패 원인</td><td>신뢰를 끝까지 지켰지만, 그 신뢰를 수익으로 전환하는 모델을 찾지 못함.</td></tr>
+  <tr><td>이차 실패 원인</td><td>리뷰 수 늘리기 이벤트(개수 보상) → 리뷰 질 하락 → 신뢰 자산 자가침식.</td></tr>
+  <tr><td>맛플의 교훈</td><td>① 수익 경로를 출시 시점에 신뢰 신호와 결박 ② 보상은 개수가 아닌 깊이로.</td></tr>
+</table>
+
+<h2>4. 맛플의 노이즈 필터가 다른 점</h2>
+
+<ul>
+  <li><strong>저장 안 함</strong> — 외부 플랫폼 평점·리뷰 원본을 저장하거나 재게시하지 않습니다(ToS·DB권 준수). 탐지는 런타임에만.</li>
+  <li><strong>단정 안 함</strong> — "협찬 확정"이 아닌 "협찬 의심" 등급 공개. 신호 빈약이면 정직하게 "신호부족"으로 보류.</li>
+  <li><strong>광고 없음</strong> — 맛플 자체가 광고·협찬을 받지 않습니다(NoSponsorPledge). 노이즈 필터를 운영하는 플랫폼이 협찬을 받으면 모순이기 때문입니다.</li>
+  <li><strong>근거 공개</strong> — 어떤 신호로 어떤 등급을 내렸는지 SignalDisclosure 로 공개합니다.</li>
+</ul>
+
+<p><a href="./">← 맛플 메인</a> · <a href="methodology.html">전체 방법론</a></p>
+
+<div class="foot">
+  맛플(Matple) — 광고·협찬 안 받은 first-party 솔직 후기로 데이트·특별한 날 실패 없는 한 끼.<br>
+  AI 인덱스: <a href="llms.txt">/llms.txt</a> · <a href="ai.txt">/ai.txt</a>
+</div>
+
+</body>
+</html>
