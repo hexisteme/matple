@@ -5,3 +5,4 @@
 ## Pages
 - [맛플 정체성·FAQ](/index.html): 무광고 first-party·신호공개·방문 증명 요약 + FAQPage.
 - [방법론](/methodology.html): 운영 서약·측면별 별점·상황 적합도·방문 증명·반증조건 공개.
+- [협찬 리뷰·평점 조작 필터링 방법](/noise-filter.html): 공정위 표준문구 자동 탐지·평점 이상치·플랫폼 간 격차로 협찬·조작을 의심 등급화. 망고플레이트 7년 부검 교훈. + FAQPage.
